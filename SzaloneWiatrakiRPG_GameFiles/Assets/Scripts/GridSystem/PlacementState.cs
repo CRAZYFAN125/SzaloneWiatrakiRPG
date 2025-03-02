@@ -13,7 +13,7 @@ namespace Assets.Scripts.GridSystem
         GridData floorData;
         GridData furnitureData;
         ObjectPlacer objectPlacer;
-        VisualEffect buildErrorEffect;
+        BuildSystemVFXHandler visualEffect;
 
         public PlacementState(int iD,
                               Grid grid,
@@ -22,7 +22,7 @@ namespace Assets.Scripts.GridSystem
                               GridData floorData,
                               GridData furnitureData,
                               ObjectPlacer objectPlacer,
-                              VisualEffect visualEffect)
+                              BuildSystemVFXHandler visualEffect)
         {
             ID = iD;
             this.grid = grid;
@@ -31,7 +31,7 @@ namespace Assets.Scripts.GridSystem
             this.floorData = floorData;
             this.furnitureData = furnitureData;
             this.objectPlacer = objectPlacer;
-            this.buildErrorEffect = visualEffect;
+            this.visualEffect = visualEffect;
 
             selectedObjectIndex = database.objectsData.FindIndex(data => data.ID == ID);
             if (selectedObjectIndex > -1)
@@ -55,7 +55,7 @@ namespace Assets.Scripts.GridSystem
             bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
             if (!placementValidity)
             {
-                buildErrorEffect.Play();
+                visualEffect.PlayErrorVFX(gridPosition+new Vector3(.5f,1.5f,.5f));
                 return;
             }
 

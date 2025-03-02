@@ -27,7 +27,7 @@ namespace Assets.Scripts.GridSystem
         [SerializeField]
         private PreviewSystem preview;
         [SerializeField]
-        VisualEffect visualEffect;
+        BuildSystemVFXHandler visualEffect;
 
         private Vector3Int lastDetectedPos = Vector3Int.zero;
 

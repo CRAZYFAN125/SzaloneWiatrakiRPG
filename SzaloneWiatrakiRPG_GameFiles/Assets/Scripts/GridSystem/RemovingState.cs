@@ -12,21 +12,21 @@ namespace Assets.Scripts.GridSystem
         readonly GridData floorData;
         readonly GridData furnitureData;
         readonly ObjectPlacer objectPlacer;
-        readonly VisualEffect removeErrorEffect;
+        readonly BuildSystemVFXHandler visualEffect;
 
         public RemovingState(Grid grid,
                              PreviewSystem previewSystem,
                              GridData floorData,
                              GridData furnitureData,
                              ObjectPlacer objectPlacer,
-                              VisualEffect visualEffect)
+                             BuildSystemVFXHandler visualEffect)
         {
             this.grid = grid;
             this.previewSystem = previewSystem;
             this.floorData = floorData;
             this.furnitureData = furnitureData;
             this.objectPlacer = objectPlacer;
-            removeErrorEffect = visualEffect;
+            this.visualEffect = visualEffect;
 
             previewSystem.StartShowingRemovePreview();
         }
@@ -50,7 +50,7 @@ namespace Assets.Scripts.GridSystem
 
             if (selectedData == null)
             {
-                removeErrorEffect.Play();
+                visualEffect.PlayErrorVFX(gridPosition + new Vector3(.5f, 0, .5f));
             }
             else
             {
