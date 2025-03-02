@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.GridSystem
 {
@@ -13,15 +14,39 @@ namespace Assets.Scripts.GridSystem
         private LayerMask placementLayerMask;
 
         public event Action OnClicked, OnExit;
+        public InputActionReference Build;
+        public InputActionReference Cancel;
 
-        private void Update()
+        private void OnEnable()
         {
-            if (Input.GetMouseButtonDown(0))
-                OnClicked?.Invoke();
-            if (Input.GetKeyDown(KeyCode.Escape))
-                OnExit?.Invoke();
-            //onGUI = false;
+            Build.action.performed += BuildActionPerformed;
+            Cancel.action.performed += CancelActionPerformed;
         }
+        private void OnDisable()
+        {
+            Build.action.performed -= BuildActionPerformed;
+            Cancel.action.performed -= CancelActionPerformed;
+        }
+
+        private void CancelActionPerformed(InputAction.CallbackContext context)
+        {
+            OnExit?.Invoke();
+        }
+
+        private void BuildActionPerformed(InputAction.CallbackContext context)
+        {
+            OnClicked?.Invoke();
+        }
+
+
+        //private void Update()
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //        OnClicked?.Invoke();
+        //    if (Input.GetKeyDown(KeyCode.Escape))
+        //        OnExit?.Invoke();
+        //    //onGUI = false;
+        //}
 
         public bool IsPointerOnUI()
         {

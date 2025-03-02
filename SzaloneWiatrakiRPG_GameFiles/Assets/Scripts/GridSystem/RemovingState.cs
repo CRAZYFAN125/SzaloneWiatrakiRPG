@@ -50,7 +50,7 @@ namespace Assets.Scripts.GridSystem
 
             if (selectedData == null)
             {
-                visualEffect.PlayErrorVFX(gridPosition + new Vector3(.5f, 0, .5f));
+                visualEffect.PlayErrorVFX(gridPosition + new Vector3(.5f, 1.6f, .5f));
             }
             else
             {
