@@ -18,8 +18,14 @@ MonoBehaviour:
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 1253899784005199217, guid: f9a63daee3ab4de4f8304d8a527d419d, type: 3}
     <Layer>k__BackingField: 1
+    <BuildRecipe>k__BackingField:
+    - <Item>k__BackingField: {fileID: 11400000, guid: b74d3138e1d6bb04ba75095833b658a2, type: 2}
+      <Amount>k__BackingField: 3
   - <Name>k__BackingField: Obj2
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 2, y: 2}
     <Prefab>k__BackingField: {fileID: 603979742673901876, guid: 0170d86f4ff886b49a471689c99ee17e, type: 3}
     <Layer>k__BackingField: 1
+    <BuildRecipe>k__BackingField:
+    - <Item>k__BackingField: {fileID: 11400000, guid: c623ccd2712186347b71d7283b148f91, type: 2}
+      <Amount>k__BackingField: 1

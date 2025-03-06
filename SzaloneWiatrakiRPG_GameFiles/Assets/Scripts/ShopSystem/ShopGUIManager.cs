@@ -17,7 +17,7 @@ namespace Assets.Scripts.ShopSystem
         }
         private void OpenOrCloseShop(InputAction.CallbackContext context)
         {
-            Debug.Log("OpenInventory");
+            Debug.Log("Open/Close Inventory");
         }
     }
 }

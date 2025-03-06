@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.VFX;
+﻿using Assets.Scripts.InventorySystem;
+using UnityEngine;
 
 namespace Assets.Scripts.GridSystem
 {
@@ -14,6 +14,7 @@ namespace Assets.Scripts.GridSystem
         GridData furnitureData;
         ObjectPlacer objectPlacer;
         BuildSystemVFXHandler visualEffect;
+        Inventory InventorySys;
 
         public PlacementState(int iD,
                               Grid grid,
@@ -22,7 +23,8 @@ namespace Assets.Scripts.GridSystem
                               GridData floorData,
                               GridData furnitureData,
                               ObjectPlacer objectPlacer,
-                              BuildSystemVFXHandler visualEffect)
+                              BuildSystemVFXHandler visualEffect,
+                              Inventory InventorySys)
         {
             ID = iD;
             this.grid = grid;
@@ -32,6 +34,8 @@ namespace Assets.Scripts.GridSystem
             this.furnitureData = furnitureData;
             this.objectPlacer = objectPlacer;
             this.visualEffect = visualEffect;
+            this.InventorySys = InventorySys;
+
 
             selectedObjectIndex = database.objectsData.FindIndex(data => data.ID == ID);
             if (selectedObjectIndex > -1)
@@ -53,11 +57,21 @@ namespace Assets.Scripts.GridSystem
         public void OnAction(Vector3Int gridPosition)
         {
             bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
-            if (!placementValidity)
+            bool placementCostValidity = true;
+
+            foreach (var item in database.objectsData[selectedObjectIndex].BuildRecipe)
+                if (!InventorySys.CheckForAvaibleStock(item.Item, item.Amount))
+                    placementCostValidity = false;
+
+
+            if (!placementValidity || !placementCostValidity)
             {
-                visualEffect.PlayErrorVFX(gridPosition+new Vector3(.5f,1.5f,.5f));
+                visualEffect.PlayErrorVFX(gridPosition + new Vector3(.5f, 1.5f, .5f));
                 return;
             }
+
+            foreach (var item in database.objectsData[selectedObjectIndex].BuildRecipe)
+                InventorySys.RemoveItems(item.Item, item.Amount);
 
             int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition));
 

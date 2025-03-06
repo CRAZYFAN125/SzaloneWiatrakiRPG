@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.InventorySystem;
 using UnityEngine;
-using UnityEngine.VFX;
 
 namespace Assets.Scripts.GridSystem
 {
@@ -28,6 +27,7 @@ namespace Assets.Scripts.GridSystem
         private PreviewSystem preview;
         [SerializeField]
         BuildSystemVFXHandler visualEffect;
+        Inventory InventorySys;
 
         private Vector3Int lastDetectedPos = Vector3Int.zero;
 
@@ -37,6 +37,9 @@ namespace Assets.Scripts.GridSystem
             StopPlacement();
             floorData = new GridData();
             furnitureData = new GridData();
+            InventorySys = Inventory.Instance;
+            InventorySys.AddItems(0, 100);
+            InventorySys.AddItems(1, 100);
         }
 
         public void StartPlacement(int ID)
@@ -49,7 +52,8 @@ namespace Assets.Scripts.GridSystem
                                                floorData,
                                                furnitureData,
                                                objectPlacer,
-                                               visualEffect);
+                                               visualEffect,
+                                               InventorySys);
             inputManager.OnClicked += PlaceObject;
             inputManager.OnExit += StopPlacement;
         }
@@ -104,7 +108,7 @@ namespace Assets.Scripts.GridSystem
         {
             Vector3 mousePosition = inputManager.GetSelectedMapPosition();
             mouseIndicator.transform.position = mousePosition;
-            if (buildingState==null)
+            if (buildingState == null)
                 return;
 
             Vector3Int gridPosition = grid.WorldToCell(mousePosition);
@@ -112,7 +116,7 @@ namespace Assets.Scripts.GridSystem
             if (lastDetectedPos != gridPosition)
             {
                 buildingState.UpdateState(gridPosition);
-                lastDetectedPos= gridPosition;
+                lastDetectedPos = gridPosition;
             }
         }
     }
