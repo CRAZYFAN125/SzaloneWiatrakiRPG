@@ -16,7 +16,7 @@ namespace Assets.Scripts.InventorySystem
         private GameObject InventoryListSpace;
         [SerializeField]
         private GameObject InventoryPrefab;
-        private float time;
+        //private float time;
         PlacementSystem placementSystem;
 
         private void OnEnable()

@@ -24,8 +24,20 @@ namespace Assets.Scripts.GridSystem
         public GameObject Prefab { get; private set; }
         [field: SerializeField]
         public int Layer { get; private set; } = 1;
+        public Sprite Image;
+        public Inventory.Fractions fractionOwned = Inventory.Fractions.Burgers;
+        [TextArea(minLines:2, maxLines:6)]
+        public string description;
         [field: SerializeField]
         public List<Recipe> BuildRecipe { get; private set; }
+        public string ToStringRecipe()
+        {
+            string recipe = string.Empty;
+            if (BuildRecipe != null && BuildRecipe.Count > 0)
+                foreach (var item in BuildRecipe)
+                    recipe += $"{item.Amount}x {item.Item.ItemName};";
+            return recipe;
+        }
     }
 
     [Serializable]
