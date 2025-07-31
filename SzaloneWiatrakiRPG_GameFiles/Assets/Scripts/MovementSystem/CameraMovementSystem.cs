@@ -32,6 +32,7 @@ namespace Assets.Scripts.MovementSystem
         private void Start()
         {
             camTransf = PlayerCamera.transform;
+            Application.targetFrameRate = 60;
         }
 
         private void Update()
@@ -39,6 +40,11 @@ namespace Assets.Scripts.MovementSystem
             camTransf.transform.Translate(movementDir.y * Time.deltaTime * moveSpeed * camTransf.forward, Space.World);
             camTransf.Translate(movementDir.x * Time.deltaTime * moveSpeed * camTransf.right, Space.World);
             movementDir = Vector2.zero;
+            if (Camera.main.transform.position.y < 1)
+                Camera.main.transform.Translate(Camera.main.transform.forward * -2);
+            if (Camera.main.transform.position.y > 25)
+                Camera.main.transform.Translate(Camera.main.transform.forward * 2);
+
         }
 
         private void MoveCamera(InputAction.CallbackContext context)
