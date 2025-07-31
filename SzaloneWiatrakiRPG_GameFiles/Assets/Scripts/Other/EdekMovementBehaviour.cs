@@ -26,16 +26,19 @@ namespace Assets.Scripts.OtherSystems
             print(nav.pathStatus);
             if(nav.pathStatus == NavMeshPathStatus.PathInvalid)
             {
+                nav.destination = MousePointer.transform.position;
                 animator.SetBool("Moving", false);
                 nav.isStopped = true;
                 return;
             }
-            if (Vector3.Distance(transform.position, MousePointer.transform.position)>nav.stoppingDistance)
+            if(Vector3.Distance(transform.position, MousePointer.transform.position) > nav.stoppingDistance)
+                nav.destination = MousePointer.transform.position;
+
+            if (nav.remainingDistance > nav.stoppingDistance)
             {
                 nav.isStopped = false;
-                nav.destination = MousePointer.transform.position;
                 animator.SetBool("Moving", true);
-                if (Vector3.Distance(transform.position, MousePointer.transform.position) > 8)
+                if (/*Vector3.Distance(transform.position, MousePointer.transform.position)*/nav.remainingDistance > 8)
                     nav.speed = speeds.y;
                 else
                     nav.speed = speeds.x;
