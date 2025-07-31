@@ -52,9 +52,8 @@ namespace Assets.Scripts.InventorySystem
             {
                 timeNow = 0;
                 foreach (var item in producedItems)
-                {
-                    InventorySys.AddItems(item.Item, item.AmountProduced*multiplier);
-                }
+                    InventorySys.AddItems(Inventory.Instance.selectedFraction,item.Item, item.AmountProduced*multiplier);
+                
 
                 timeNow += Time.fixedDeltaTime;
             }

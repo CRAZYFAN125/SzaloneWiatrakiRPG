@@ -60,7 +60,7 @@ namespace Assets.Scripts.GridSystem
             bool placementCostValidity = true;
 
             foreach (var item in database.objectsData[selectedObjectIndex].BuildRecipe)
-                if (!InventorySys.CheckForAvaibleStock(item.Item, item.Amount))
+                if (!InventorySys.CheckForAvaibleStock(item.Item, item.Amount,Inventory.Instance.selectedFraction))
                     placementCostValidity = false;
 
 
@@ -71,9 +71,9 @@ namespace Assets.Scripts.GridSystem
             }
 
             foreach (var item in database.objectsData[selectedObjectIndex].BuildRecipe)
-                InventorySys.RemoveItems(item.Item, item.Amount);
+                InventorySys.RemoveItems(item.Item, item.Amount, Inventory.Instance.selectedFraction);
 
-            int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition));
+            int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex], grid.CellToWorld(gridPosition));
 
             GridData selectedData = database.objectsData[selectedObjectIndex].Layer == 0 ?
                 floorData : furnitureData;

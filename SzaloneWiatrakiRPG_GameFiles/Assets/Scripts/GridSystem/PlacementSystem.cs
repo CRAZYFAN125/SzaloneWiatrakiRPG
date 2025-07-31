@@ -38,8 +38,6 @@ namespace Assets.Scripts.GridSystem
             floorData = new GridData();
             furnitureData = new GridData();
             InventorySys = Inventory.Instance;
-            InventorySys.AddItems(0, 100);
-            InventorySys.AddItems(1, 100);
         }
 
         public void StartPlacement(int ID)
@@ -93,7 +91,7 @@ namespace Assets.Scripts.GridSystem
         //    return selectedData.CanPlaceObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size);
         //}
 
-        private void StopPlacement()
+        public void StopPlacement()
         {
             if (buildingState == null)
                 return;
