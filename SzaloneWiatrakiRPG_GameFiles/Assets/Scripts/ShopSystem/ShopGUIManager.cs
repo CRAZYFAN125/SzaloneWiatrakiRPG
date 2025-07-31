@@ -29,7 +29,7 @@ namespace Assets.Scripts.ShopSystem
         {
             foreach (var objectData in _ObjectDatabaseSO.objectsData)
             {
-                if (objectData.fractionOwned == Inventory.Instance.selectedFraction)
+                if (objectData.fractionOwned == Inventory.Instance.selectedFraction||objectData.fractionOwned==Inventory.Fractions.Both)
                     Instantiate(Prefab, Container).GetComponent<ShopGUIItemViewer>().Setup(objectData);
             }
         }

@@ -21,7 +21,11 @@ namespace Assets.Scripts.ShopSystem
         }
         internal void Setup(ObjectData objectData)
         {
-            image.sprite = objectData.Image;
+            if (objectData.Image != null)
+            {
+                image.sprite = objectData.Image;
+                image.color = Color.white;
+            }
             objectName.text = objectData.Name;
             SetDescription(objectData);
             gameObject.GetComponent<Button>().onClick.AddListener(() => placementSystem.StartPlacement(objectData.ID));

@@ -31,6 +31,8 @@ namespace Assets.Scripts.InventorySystem
         private void Start()
         {
             placementSystem = FindObjectOfType<PlacementSystem>();
+            Inventory.Instance.OnItemAdded += UpdateInventoryData;
+            Inventory.Instance.OnItemRemoved += UpdateInventoryData;
         }
 
         //private void FixedUpdate()

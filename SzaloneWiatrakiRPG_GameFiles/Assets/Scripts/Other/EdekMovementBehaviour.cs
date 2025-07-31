@@ -23,7 +23,7 @@ namespace Assets.Scripts.OtherSystems
         // Update is called once per frame
         void FixedUpdate()
         {
-            print(nav.pathStatus);
+            //print(nav.pathStatus);
             if(nav.pathStatus == NavMeshPathStatus.PathInvalid)
             {
                 nav.destination = MousePointer.transform.position;

@@ -36,3 +36,42 @@ MonoBehaviour:
     <BuildRecipe>k__BackingField:
     - <Item>k__BackingField: {fileID: 11400000, guid: c623ccd2712186347b71d7283b148f91, type: 2}
       <Amount>k__BackingField: 1
+  - <Name>k__BackingField: Lamp Post V
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 6409648411289556871, guid: 67437004753fd5546bb44fb3272dc894, type: 3}
+    <Layer>k__BackingField: 1
+    Image: {fileID: 21300000, guid: c99864394f3f5d44ba119a3dca2673e5, type: 3}
+    fractionOwned: 2
+    description: "Lampka uliczna u\u0142o\u017Cona z miedzi i kleju"
+    <BuildRecipe>k__BackingField:
+    - <Item>k__BackingField: {fileID: 11400000, guid: c623ccd2712186347b71d7283b148f91, type: 2}
+      <Amount>k__BackingField: 5
+    - <Item>k__BackingField: {fileID: 11400000, guid: b74d3138e1d6bb04ba75095833b658a2, type: 2}
+      <Amount>k__BackingField: 10
+  - <Name>k__BackingField: Lamp Post H
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 2, y: 1}
+    <Prefab>k__BackingField: {fileID: 1089369698747197076, guid: 67dbd6acb38540e4196230ec54fa951b, type: 3}
+    <Layer>k__BackingField: 1
+    Image: {fileID: 21300000, guid: d40070131f4da164c9f5f2b6774c5e28, type: 3}
+    fractionOwned: 2
+    description: "Lampka uliczna u\u0142o\u017Cona z miedzi i kleju"
+    <BuildRecipe>k__BackingField:
+    - <Item>k__BackingField: {fileID: 11400000, guid: c623ccd2712186347b71d7283b148f91, type: 2}
+      <Amount>k__BackingField: 5
+    - <Item>k__BackingField: {fileID: 11400000, guid: b74d3138e1d6bb04ba75095833b658a2, type: 2}
+      <Amount>k__BackingField: 10
+  - <Name>k__BackingField: Chata z Drwala
+    <ID>k__BackingField: 4
+    <Size>k__BackingField: {x: 3, y: 4}
+    <Prefab>k__BackingField: {fileID: 6325425715947986667, guid: ec0b744593fcf264588fdb1d03e2ff84, type: 3}
+    <Layer>k__BackingField: 1
+    Image: {fileID: 21300000, guid: 4451876ef12dbcd4d854144d45be80dc, type: 3}
+    fractionOwned: 2
+    description: Prosta chata drwala
+    <BuildRecipe>k__BackingField:
+    - <Item>k__BackingField: {fileID: 11400000, guid: c623ccd2712186347b71d7283b148f91, type: 2}
+      <Amount>k__BackingField: 10
+    - <Item>k__BackingField: {fileID: 11400000, guid: b74d3138e1d6bb04ba75095833b658a2, type: 2}
+      <Amount>k__BackingField: 20

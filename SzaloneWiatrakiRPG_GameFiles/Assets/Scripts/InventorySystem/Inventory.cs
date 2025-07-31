@@ -9,7 +9,8 @@ namespace Assets.Scripts.InventorySystem
         public enum Fractions
         {
             Burgers,
-            Breads
+            Breads,
+            Both
         }
 
         public class InventoryDataCenter

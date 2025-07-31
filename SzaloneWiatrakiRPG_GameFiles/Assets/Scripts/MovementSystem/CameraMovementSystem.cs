@@ -50,7 +50,7 @@ namespace Assets.Scripts.MovementSystem
         private void RotateCamera(InputAction.CallbackContext context)
         {
             camTransf.transform.rotation = Quaternion.Euler(new Vector3(0, camTransf.transform.rotation.eulerAngles.y + context.action.ReadValue<float>() * 45, 0));
-            print(camTransf.rotation.eulerAngles);
+            //print(camTransf.rotation.eulerAngles);
         }
 
 
