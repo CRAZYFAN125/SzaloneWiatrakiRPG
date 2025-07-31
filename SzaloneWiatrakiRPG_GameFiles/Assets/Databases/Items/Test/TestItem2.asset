@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e837c261dd41cc48a96f8e9eae738ca, type: 3}
   m_Name: TestItem2
   m_EditorClassIdentifier: 
-  ItemName: Dziubdziub
+  ItemName: Klej
   ItemID: 1

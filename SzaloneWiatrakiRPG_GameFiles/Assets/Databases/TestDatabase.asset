@@ -20,8 +20,8 @@ MonoBehaviour:
     <Layer>k__BackingField: 1
     Image: {fileID: 0}
     fractionOwned: 0
-    description: A very dense object that needs to be in air so it wouldn't collapse
-      universe
+    description: "Bardzo g\u0119sty obiekt, kt\xF3ry musi by\u0107 w powietrzu, aby
+      nie zawali\u0107 wszech\u015Bwiata pod swoj\u0105 mas\u0105"
     <BuildRecipe>k__BackingField:
     - <Item>k__BackingField: {fileID: 11400000, guid: b74d3138e1d6bb04ba75095833b658a2, type: 2}
       <Amount>k__BackingField: 3
@@ -32,7 +32,7 @@ MonoBehaviour:
     <Layer>k__BackingField: 1
     Image: {fileID: 0}
     fractionOwned: 0
-    description: 
+    description: "Sklejony papier tak by dawa\u0142 sens bytu OBJ1"
     <BuildRecipe>k__BackingField:
     - <Item>k__BackingField: {fileID: 11400000, guid: c623ccd2712186347b71d7283b148f91, type: 2}
       <Amount>k__BackingField: 1
