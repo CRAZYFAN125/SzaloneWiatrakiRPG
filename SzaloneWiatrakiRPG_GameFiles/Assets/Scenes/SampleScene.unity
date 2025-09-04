@@ -4012,6 +4012,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618116282}
   m_CullTransparentMesh: 1
+--- !u!1001 &1658705241
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.0303416
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.010000229
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.034666
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      propertyPath: m_Name
+      value: SmelterHut
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1658705243}
+  m_SourcePrefab: {fileID: 100100000, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+--- !u!1 &1658705242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7fdd50ae33b118448a56b6490ac18aa6, type: 3}
+  m_PrefabInstance: {fileID: 1658705241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1658705243
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658705242}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.99000007, z: 1.0580001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.010000001, z: 1.0580001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1674582751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,3 +5310,4 @@ SceneRoots:
   - {fileID: 1303555143}
   - {fileID: 2735986903619955287}
   - {fileID: 1769642458}
+  - {fileID: 1658705241}
