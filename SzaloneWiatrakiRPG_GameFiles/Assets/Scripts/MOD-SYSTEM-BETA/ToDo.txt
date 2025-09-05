@@ -1,7 +1,7 @@
-﻿- FileManagment
-- Game Input-Output
-- Read Files
-- Changing game enviroment
-- Changing Game assets
-- Server fail-save/fail-safe
-- Add more into ToDo list
+﻿- Game Input-Output 👍 👎
+- Read Files  👍
+- FileManagment  👎
+- Changing game enviroment  👎
+- Changing Game assets  👎
+- Server fail-save/fail-safe  👎
+- Add more into ToDo list  👎
